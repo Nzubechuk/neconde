@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --color-sushi: #7CA73B;
+  --color-anakiwa: #A6D1FE;
+  --color-laurel: #018C15;
+  --color-deep-green: #0a2f0a;
+  /* Darker corporate green */
+  --color-dark: #121212;
+  --color-grey-light: #f5f7f5;
+  --color-grey-med: #e0e0e0;
+  --color-white: #ffffff;
+
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+  /* Semantic Variables (Light Mode Default) */
+  --bg-primary: var(--color-white);
+  --bg-secondary: var(--color-grey-light);
+  --bg-header: rgba(255, 255, 255, 0.95);
+  --bg-card: var(--color-white);
+  --text-primary: var(--color-dark);
+  --text-secondary: #555555;
+  --border-color: var(--color-grey-med);
+  --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-header: rgba(18, 18, 18, 0.95);
+  --bg-card: #2c2c2c;
+  --text-primary: #f5f7f5;
+  --text-secondary: #b0b0b0;
+  --border-color: #333333;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --color-grey-light: #2c2c2c;
+  /* Override for components using this directly */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+/* Utilities */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
+  /* More corporate, less rounded */
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background: var(--color-laurel);
+  color: white;
+  border: 1px solid var(--color-laurel);
+}
+
+.btn-primary:hover {
+  background: var(--color-deep-green);
+  border-color: var(--color-deep-green);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid white;
+  color: white;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: var(--color-laurel);
+}
+
+.section-padding {
+  padding: 8rem 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-laurel {
+  color: var(--color-laurel);
+}
+
+.text-sushi {
+  color: var(--color-sushi);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
